@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Project3.ViewModels"
+             x:Class="Project3.Views.AddAContactPage">
+
+    <ContentPage.BindingContext>
+        <local:ContactsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="First Name: "/>
+            <Entry Placeholder="Enter First Name"
+                   Text="{Binding Contact.contactNameFirst}"/>
+
+            <Label Text="Last Name: "/>
+            <Entry Placeholder="Enter Last Name"
+                 Text="{Binding Contact.contactNameLast}"  />
+            <Label Text="Contact Type: " />
+            <Entry Placeholder="Enter Contact Type"
+                   Text="{Binding Contact.contactType}"/> 
+            
+            <Button Text="Save Contact"
+                    HorizontalOptions="Fill"
+                    Command="{Binding AddContactCommand}"/>
+
+            <Button Text="Return" 
+                    HorizontalOptions="Fill"
+                    Clicked="ReturnButton_Clicked" 
+                    />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
